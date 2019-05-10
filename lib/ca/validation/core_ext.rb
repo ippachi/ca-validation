@@ -1,16 +1,17 @@
 module ActionController
   class Parameters
     def valid?(validator)
-      @result = validator.call(permit!.to_hash)
+      dup_params = deep_dup
+      @result = validator.call(dup_params.permit!.to_hash)
       @result.errors.empty?
     end
 
-    def errors
-      @result.errors
+    def errors(full: false)
+      @result.messages(full: full)
     end
 
-    def full_messages
-      @result.messages(full: true)
+    def result
+      @result.to_hash
     end
   end
 end

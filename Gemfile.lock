@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ca-validation (0.1.1)
+    ca-validation (0.1.2)
       dry-validation (~> 0.13)
       rails (~> 5.2.3)
 
