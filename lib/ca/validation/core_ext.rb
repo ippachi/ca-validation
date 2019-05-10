@@ -1,7 +1,7 @@
 module ActionController
   class Parameters
     def valid?(validator)
-      @result = validator.call(parameters)
+      @result = validator.call(permit!.to_hash)
       @result.errors.empty?
     end
 
