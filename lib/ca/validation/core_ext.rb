@@ -7,11 +7,11 @@ module ActionController
     end
 
     def errors(full: false)
-      @result.messages(full: full)
+      @result&.messages(full: full) || {}
     end
 
     def result
-      @result.to_hash
+      @result&.to_hash || {}
     end
   end
 end

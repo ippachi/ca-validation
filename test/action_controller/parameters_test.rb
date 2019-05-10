@@ -38,7 +38,6 @@ class ActionController::Parameters::Test < ActiveSupport::TestCase
 
     assert_equal params.valid?(PersonValidator), false
     assert_not_equal params.errors, {}
-    assert_not_equal params.full_messages, {}
   end
 
   test "it valid? returns true" do
@@ -52,6 +51,5 @@ class ActionController::Parameters::Test < ActiveSupport::TestCase
 
     assert_equal params.valid?(OtherValidator), true
     assert_equal params.errors, {}
-    assert_equal params.full_messages, {}
   end
 end
